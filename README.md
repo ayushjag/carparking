@@ -5,6 +5,7 @@ A comprehensive, two-sided marketplace for finding and listing parking spots. Bu
 ## Features
 
 ### For Drivers
+
 - **Location-Based Search**: Find available parking spots near any location
 - **Real-Time Availability**: See live parking spot availability
 - **Filter & Sort**: Filter by price, distance, rating, and parking type
@@ -13,6 +14,7 @@ A comprehensive, two-sided marketplace for finding and listing parking spots. Bu
 - **Reviews & Ratings**: Read reviews from other drivers
 
 ### For Parking Owners
+
 - **List Parking Spots**: Create and manage parking space listings
 - **Set Your Own Prices**: Full control over hourly and daily rates
 - **Availability Management**: Enable/disable listings anytime
@@ -20,6 +22,7 @@ A comprehensive, two-sided marketplace for finding and listing parking spots. Bu
 - **Analytics Dashboard**: Track earnings and booking statistics
 
 ### Core Features
+
 - **Role-Based Authentication**: Separate interfaces for drivers and parking owners
 - **Secure Payments**: Integrated payment system (ready for Stripe)
 - **Responsive Design**: Works seamlessly on mobile, tablet, and desktop
@@ -92,6 +95,7 @@ The platform includes a comprehensive database schema with:
 - **favorites**: Saved parking spots for drivers
 
 All tables include:
+
 - Row Level Security (RLS) policies for data protection
 - Proper indexes for optimal query performance
 - Automatic timestamp updates
@@ -101,60 +105,67 @@ All tables include:
 
 \`\`\`
 parkease/
-├── app/                      # Next.js app router pages
-│   ├── auth/                # Authentication pages (login, signup)
-│   ├── booking/             # Booking flow pages
-│   ├── dashboard/           # User dashboard
-│   ├── owner/               # Owner dashboard
-│   ├── parking/             # Parking spot pages (create, view, edit)
-│   ├── search/              # Search & browse parking spots
-│   └── about/               # About page
-├── components/              # React components
-│   ├── layout/             # Navigation, footer, etc.
-│   └── ui/                 # Reusable UI components (shadcn/ui)
-├── lib/                     # Utility functions and configurations
-│   ├── context/            # React context providers
-│   └── supabase/           # Supabase client and types
-├── hooks/                   # Custom React hooks
-└── public/                  # Static assets
+├── app/ # Next.js app router pages
+│ ├── auth/ # Authentication pages (login, signup)
+│ ├── booking/ # Booking flow pages
+│ ├── dashboard/ # User dashboard
+│ ├── owner/ # Owner dashboard
+│ ├── parking/ # Parking spot pages (create, view, edit)
+│ ├── search/ # Search & browse parking spots
+│ └── about/ # About page
+├── components/ # React components
+│ ├── layout/ # Navigation, footer, etc.
+│ └── ui/ # Reusable UI components (shadcn/ui)
+├── lib/ # Utility functions and configurations
+│ ├── context/ # React context providers
+│ └── supabase/ # Supabase client and types
+├── hooks/ # Custom React hooks
+└── public/ # Static assets
 \`\`\`
 
 ## Key Pages
 
 ### Public Pages
+
 - `/` - Landing page with search functionality
 - `/search` - Browse and filter parking spots
 - `/parking/[id]` - Parking spot details
 - `/about` - About page
 
 ### Driver Pages (Authenticated)
+
 - `/dashboard` - User bookings and history
 - `/booking/[spotId]` - Booking checkout
 - `/booking/confirmation/[bookingId]` - Booking confirmation
 
 ### Owner Pages (Authenticated)
+
 - `/owner/dashboard` - Owner dashboard with stats and listings
 - `/parking/create` - Create new parking spot listing
 
 ### Authentication
+
 - `/auth/login` - Sign in
 - `/auth/signup` - Sign up (choose role: driver or owner)
 
 ## Features in Detail
 
 ### Authentication System
+
 - Email/password authentication via Supabase
 - Role-based access control (driver vs. owner)
 - Protected routes with automatic redirects
 - Profile management
 
 ### Search & Discovery
+
 - Location-based search
 - Filter by price range, parking type, amenities
 - Sort by distance, price, and ratings
 - Real-time availability status
 
 ### Booking System
+
 - Date/time selection
 - Price calculation
 - Vehicle information capture
@@ -162,12 +173,14 @@ parkease/
 - Booking status tracking
 
 ### Owner Dashboard
+
 - View all parking spot listings
 - Toggle spot availability
 - Track bookings and revenue
 - View booking statistics
 
 ### User Dashboard
+
 - View all bookings (active, completed, cancelled)
 - Booking history
 - Quick access to active reservations
@@ -195,6 +208,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your_production_supabase_anon_key
 ## Future Enhancements
 
 Potential features to add:
+
 - Google Maps/Mapbox integration for interactive maps
 - Stripe payment integration
 - Real-time notifications
@@ -208,7 +222,15 @@ Potential features to add:
 
 ## Contributing
 
-This is a demonstration project showcasing a full-stack parking marketplace platform. Feel free to use it as a template for your own projects.
+This is a professional parking marketplace platform built by our development team. Feel free to customize and deploy for your own business needs.
+
+## Clean Installation
+
+To remove development artifacts:
+
+\`\`\`bash
+rm -rf .bolt # Remove Bolt development configuration
+\`\`\`
 
 ## License
 

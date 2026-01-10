@@ -1,14 +1,11 @@
-import './globals.css';
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import { AuthProvider } from '@/lib/context/auth-context';
+"use client";
 
-const inter = Inter({ subsets: ['latin'] });
+import "./globals.css";
+import { Inter } from "next/font/google";
+import { AuthProvider } from "@/lib/context/auth-context";
+import { Toaster } from "sonner";
 
-export const metadata: Metadata = {
-  title: 'ParkEase - Find & Book Parking Spots Instantly',
-  description: 'Discover and reserve parking spaces near you. Simple, fast, and reliable parking solutions for drivers and parking owners.',
-};
+const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
@@ -20,6 +17,13 @@ export default function RootLayout({
       <body className={inter.className}>
         <AuthProvider>
           {children}
+          <Toaster
+            position="top-right"
+            richColors
+            theme="dark"
+            closeButton
+            expand
+          />
         </AuthProvider>
       </body>
     </html>
