@@ -14,6 +14,8 @@ import {
 } from "@/components/ui/card";
 import { ParkingCircle, Mail, CheckCircle, Clock } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 export default function ConfirmEmailPage() {
   const searchParams = useSearchParams();
   const email = searchParams.get("email") || "";
