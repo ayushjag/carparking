@@ -1,7 +1,7 @@
 "use client";
 
-import { useSearchParams, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
@@ -12,21 +12,12 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ParkingCircle, Mail, CheckCircle, Clock } from "lucide-react";
+import { ParkingCircle, Mail, Clock } from "lucide-react";
 
-export const dynamic = "force-dynamic";
-
-export default function ConfirmEmailPage() {
+function ConfirmEmailContent() {
   const searchParams = useSearchParams();
   const email = searchParams.get("email") || "";
   const role = searchParams.get("role") || "driver";
-  const [copied, setCopied] = useState(false);
-
-  const copyEmail = () => {
-    navigator.clipboard.writeText(email);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-gray-100 flex items-center justify-center p-4">
@@ -56,7 +47,7 @@ export default function ConfirmEmailPage() {
           <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
             <p className="text-sm text-gray-600 mb-2">Confirmation sent to:</p>
             <p className="text-lg font-semibold text-gray-900 break-all">
-              {email}
+              {email || "your email"}
             </p>
           </div>
 
@@ -141,4 +132,13 @@ export default function ConfirmEmailPage() {
       </Card>
     </div>
   );
+}
+
+export default function ConfirmEmailPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ConfirmEmailContent />
+    </Suspense>
+  );
+}
 }
