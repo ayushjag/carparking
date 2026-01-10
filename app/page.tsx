@@ -52,7 +52,7 @@ export default function Home() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 ">
           <div className="text-center max-w-4xl mx-auto">
-            <motion.div 
+            <motion.div
               className="inline-block mb-6 px-4 py-2 bg-blue-500/30 backdrop-blur-md rounded-full border border-blue-400/30"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -63,7 +63,7 @@ export default function Home() {
               </p>
             </motion.div>
 
-            <motion.h1 
+            <motion.h1
               className="text-5xl md:text-7xl font-bold mb-8 leading-tight tracking-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -75,7 +75,7 @@ export default function Home() {
                 in Seconds
               </span>
             </motion.h1>
-            <motion.p 
+            <motion.p
               className="text-xl md:text-2xl mb-12 text-blue-100 leading-relaxed max-w-2xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -85,8 +85,8 @@ export default function Home() {
               hassle-free. Join thousands of happy drivers today.
             </motion.p>
 
-            <motion.form 
-              onSubmit={handleSearch} 
+            <motion.form
+              onSubmit={handleSearch}
               className="max-w-2xl mx-auto mb-12"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -142,7 +142,7 @@ export default function Home() {
       {/* Why Choose ParkEase Section */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
+          <motion.div
             className="text-center mb-20"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -160,7 +160,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* Card 1 */}
-            <motion.div 
+            <motion.div
               className="group relative"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -185,7 +185,7 @@ export default function Home() {
             </motion.div>
 
             {/* Card 2 */}
-            <motion.div 
+            <motion.div
               className="group relative"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -210,7 +210,7 @@ export default function Home() {
             </motion.div>
 
             {/* Card 3 */}
-            <motion.div 
+            <motion.div
               className="group relative"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -241,7 +241,12 @@ export default function Home() {
       <section className="py-24 bg-gradient-to-b from-slate-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
               <div className="inline-block bg-blue-100 text-blue-700 px-5 py-2 rounded-full text-sm font-bold mb-8 uppercase tracking-wide">
                 ✓ For Drivers
               </div>
@@ -254,7 +259,13 @@ export default function Home() {
                 search system.
               </p>
               <ul className="space-y-6 mb-10">
-                <li className="flex items-start group">
+                <motion.li
+                  className="flex items-start group"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                  viewport={{ once: true }}
+                >
                   <div className="flex-shrink-0 mr-4 mt-1">
                     <div className="flex items-center justify-center h-10 w-10 rounded-full bg-gradient-to-br from-blue-600 to-blue-500 text-white shadow-lg">
                       <Star className="h-6 w-6" />
@@ -269,8 +280,14 @@ export default function Home() {
                       drivers
                     </p>
                   </div>
-                </li>
-                <li className="flex items-start group">
+                </motion.li>
+                <motion.li
+                  className="flex items-start group"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  viewport={{ once: true }}
+                >
                   <div className="flex-shrink-0 mr-4 mt-1">
                     <div className="flex items-center justify-center h-10 w-10 rounded-full bg-gradient-to-br from-green-600 to-green-500 text-white shadow-lg">
                       <TrendingUp className="h-6 w-6" />
@@ -285,8 +302,14 @@ export default function Home() {
                       area
                     </p>
                   </div>
-                </li>
-                <li className="flex items-start group">
+                </motion.li>
+                <motion.li
+                  className="flex items-start group"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  viewport={{ once: true }}
+                >
                   <div className="flex-shrink-0 mr-4 mt-1">
                     <div className="flex items-center justify-center h-10 w-10 rounded-full bg-gradient-to-br from-purple-600 to-purple-500 text-white shadow-lg">
                       <Car className="h-6 w-6" />
@@ -300,19 +323,32 @@ export default function Home() {
                       Track all your bookings in one simple, intuitive dashboard
                     </p>
                   </div>
-                </li>
+                </motion.li>
               </ul>
-              <Link href="/search">
-                <Button
-                  size="lg"
-                  className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold px-8 py-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
-                >
-                  Start Searching Now
-                  <Search className="h-5 w-5 ml-2" />
-                </Button>
-              </Link>
-            </div>
-            <div className="relative group">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                <Link href="/search">
+                  <Button
+                    size="lg"
+                    className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold px-8 py-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  >
+                    Start Searching Now
+                    <Search className="h-5 w-5 ml-2" />
+                  </Button>
+                </Link>
+              </motion.div>
+            </motion.div>
+            <motion.div
+              className="relative group"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
               <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-blue-400/20 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
               <div className="relative bg-gradient-to-br from-blue-50 to-white rounded-3xl p-8 shadow-2xl border border-blue-100/50 space-y-5">
                 {/* Card 1 */}
@@ -367,7 +403,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -500,7 +536,13 @@ export default function Home() {
       {/* How It Works Section */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
+          <motion.div 
+            className="text-center mb-20"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
             <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
               How It Works
             </h2>
@@ -508,11 +550,17 @@ export default function Home() {
               Finding and booking parking has never been easier. Three simple
               steps to get you parked.
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* Step 1 */}
-            <div className="relative group">
+            <motion.div 
+              className="relative group"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0 }}
+              viewport={{ once: true }}
+            >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-400 rounded-3xl blur-xl opacity-0 group-hover:opacity-20 transition duration-500"></div>
               <div className="relative bg-gradient-to-br from-blue-50 to-white rounded-3xl p-8 border border-blue-100 shadow-lg hover:shadow-2xl transition-all duration-300 transform group-hover:scale-105">
                 <div className="absolute -top-6 left-8 bg-gradient-to-r from-blue-600 to-cyan-400 text-white rounded-full w-14 h-14 flex items-center justify-center text-2xl font-bold shadow-lg">
@@ -529,10 +577,16 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Step 2 */}
-            <div className="relative group">
+            <motion.div 
+              className="relative group"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
               <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-400 rounded-3xl blur-xl opacity-0 group-hover:opacity-20 transition duration-500"></div>
               <div className="relative bg-gradient-to-br from-purple-50 to-white rounded-3xl p-8 border border-purple-100 shadow-lg hover:shadow-2xl transition-all duration-300 transform group-hover:scale-105">
                 <div className="absolute -top-6 left-8 bg-gradient-to-r from-purple-600 to-pink-400 text-white rounded-full w-14 h-14 flex items-center justify-center text-2xl font-bold shadow-lg">
@@ -549,10 +603,16 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Step 3 */}
-            <div className="relative group">
+            <motion.div 
+              className="relative group"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
               <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-emerald-400 rounded-3xl blur-xl opacity-0 group-hover:opacity-20 transition duration-500"></div>
               <div className="relative bg-gradient-to-br from-green-50 to-white rounded-3xl p-8 border border-green-100 shadow-lg hover:shadow-2xl transition-all duration-300 transform group-hover:scale-105">
                 <div className="absolute -top-6 left-8 bg-gradient-to-r from-green-600 to-emerald-400 text-white rounded-full w-14 h-14 flex items-center justify-center text-2xl font-bold shadow-lg">
@@ -569,7 +629,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* CTA */}
@@ -601,7 +661,13 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* Testimonial 1 */}
-            <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border border-gray-100 transform hover:scale-105">
+            <motion.div 
+              className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border border-gray-100 transform hover:scale-105"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0 }}
+              viewport={{ once: true }}
+            >
               <div className="flex items-center mb-4">
                 <div className="flex text-yellow-400 text-lg">⭐⭐⭐⭐⭐</div>
               </div>
@@ -619,10 +685,16 @@ export default function Home() {
                   <p className="text-sm text-gray-500">Daily Commuter</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Testimonial 2 */}
-            <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border border-gray-100 transform hover:scale-105">
+            <motion.div 
+              className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border border-gray-100 transform hover:scale-105"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
               <div className="flex items-center mb-4">
                 <div className="flex text-yellow-400 text-lg">⭐⭐⭐⭐⭐</div>
               </div>
@@ -640,10 +712,16 @@ export default function Home() {
                   <p className="text-sm text-gray-500">Parking Owner</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Testimonial 3 */}
-            <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border border-gray-100 transform hover:scale-105">
+            <motion.div 
+              className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border border-gray-100 transform hover:scale-105"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
               <div className="flex items-center mb-4">
                 <div className="flex text-yellow-400 text-lg">⭐⭐⭐⭐⭐</div>
               </div>
@@ -660,7 +738,7 @@ export default function Home() {
                   <p className="text-sm text-gray-500">Business Owner</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -689,7 +767,13 @@ export default function Home() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {/* Stat Cards */}
-            <div className="group relative">
+            <motion.div 
+              className="group relative"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0 }}
+              viewport={{ once: true }}
+            >
               <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-500 rounded-2xl blur-xl opacity-0 group-hover:opacity-50 transition duration-500"></div>
               <div className="relative bg-gradient-to-br from-blue-600/20 to-blue-500/10 backdrop-blur-xl rounded-2xl p-8 border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300 text-center">
                 <p className="text-5xl md:text-6xl font-bold text-blue-300 mb-3">
@@ -697,9 +781,15 @@ export default function Home() {
                 </p>
                 <p className="text-gray-300 font-semibold">Active Users</p>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="group relative">
+            <motion.div 
+              className="group relative"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
               <div className="absolute inset-0 bg-gradient-to-br from-green-600 to-green-500 rounded-2xl blur-xl opacity-0 group-hover:opacity-50 transition duration-500"></div>
               <div className="relative bg-gradient-to-br from-green-600/20 to-green-500/10 backdrop-blur-xl rounded-2xl p-8 border border-green-500/20 hover:border-green-500/40 transition-all duration-300 text-center">
                 <p className="text-5xl md:text-6xl font-bold text-green-300 mb-3">
@@ -707,9 +797,15 @@ export default function Home() {
                 </p>
                 <p className="text-gray-300 font-semibold">Parking Spots</p>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="group relative">
+            <motion.div 
+              className="group relative"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
               <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-purple-500 rounded-2xl blur-xl opacity-0 group-hover:opacity-50 transition duration-500"></div>
               <div className="relative bg-gradient-to-br from-purple-600/20 to-purple-500/10 backdrop-blur-xl rounded-2xl p-8 border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 text-center">
                 <p className="text-5xl md:text-6xl font-bold text-purple-300 mb-3">
@@ -717,9 +813,15 @@ export default function Home() {
                 </p>
                 <p className="text-gray-300 font-semibold">Bookings Made</p>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="group relative">
+            <motion.div 
+              className="group relative"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
               <div className="absolute inset-0 bg-gradient-to-br from-yellow-600 to-yellow-500 rounded-2xl blur-xl opacity-0 group-hover:opacity-50 transition duration-500"></div>
               <div className="relative bg-gradient-to-br from-yellow-600/20 to-yellow-500/10 backdrop-blur-xl rounded-2xl p-8 border border-yellow-500/20 hover:border-yellow-500/40 transition-all duration-300 text-center">
                 <p className="text-5xl md:text-6xl font-bold text-yellow-300 mb-3">
@@ -727,7 +829,7 @@ export default function Home() {
                 </p>
                 <p className="text-gray-300 font-semibold">Average Rating</p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
