@@ -1,6 +1,7 @@
 {
-  "name": "nextjs",
-  "version": "0.1.0",
+  "name": "parkease",
+  "version": "1.0.0",
+  "description": "A modern car parking booking platform connecting drivers with parking spot owners",
   "private": true,
   "scripts": {
     "dev": "next dev",
