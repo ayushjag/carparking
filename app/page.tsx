@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 import { Navbar } from "@/components/layout/navbar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -51,25 +52,46 @@ export default function Home() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 ">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-block mb-6 px-4 py-2 bg-blue-500/30 backdrop-blur-md rounded-full border border-blue-400/30">
+            <motion.div 
+              className="inline-block mb-6 px-4 py-2 bg-blue-500/30 backdrop-blur-md rounded-full border border-blue-400/30"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
               <p className="text-sm font-semibold text-blue-100">
                 🚀 Revolutionizing Urban Parking
               </p>
-            </div>
+            </motion.div>
 
-            <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight tracking-tight">
+            <motion.h1 
+              className="text-5xl md:text-7xl font-bold mb-8 leading-tight tracking-tight"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+            >
               Find Perfect Parking
               <br />
               <span className="bg-gradient-to-r from-blue-200 via-white to-blue-200 bg-clip-text text-transparent">
                 in Seconds
               </span>
-            </h1>
-            <p className="text-xl md:text-2xl mb-12 text-blue-100 leading-relaxed max-w-2xl mx-auto">
+            </motion.h1>
+            <motion.p 
+              className="text-xl md:text-2xl mb-12 text-blue-100 leading-relaxed max-w-2xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+            >
               Book verified parking spaces near you. Fast, secure, and
               hassle-free. Join thousands of happy drivers today.
-            </p>
+            </motion.p>
 
-            <form onSubmit={handleSearch} className="max-w-2xl mx-auto mb-12">
+            <motion.form 
+              onSubmit={handleSearch} 
+              className="max-w-2xl mx-auto mb-12"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+            >
               <div className="bg-white rounded-2xl shadow-2xl p-3 flex flex-col sm:flex-row gap-3 backdrop-blur-xl bg-opacity-95 hover:shadow-3xl transition-all duration-300">
                 <div className="flex-1 flex items-center px-5 py-3">
                   <MapPin className="h-6 w-6 text-blue-600 mr-3 flex-shrink-0" />
@@ -120,7 +142,13 @@ export default function Home() {
       {/* Why Choose ParkEase Section */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
+          <motion.div 
+            className="text-center mb-20"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
             <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
               Why Choose ParkEase?
             </h2>
@@ -128,11 +156,17 @@ export default function Home() {
               Experience the future of parking with cutting-edge technology and
               customer-first design
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* Card 1 */}
-            <div className="group relative">
+            <motion.div 
+              className="group relative"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0 }}
+              viewport={{ once: true }}
+            >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-400 rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition duration-500"></div>
               <Card className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 transform group-hover:scale-105 rounded-2xl overflow-hidden">
                 <CardContent className="p-8">
@@ -148,10 +182,16 @@ export default function Home() {
                   </p>
                 </CardContent>
               </Card>
-            </div>
+            </motion.div>
 
             {/* Card 2 */}
-            <div className="group relative">
+            <motion.div 
+              className="group relative"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
               <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-green-400 rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition duration-500"></div>
               <Card className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 transform group-hover:scale-105 rounded-2xl overflow-hidden">
                 <CardContent className="p-8">
@@ -167,10 +207,16 @@ export default function Home() {
                   </p>
                 </CardContent>
               </Card>
-            </div>
+            </motion.div>
 
             {/* Card 3 */}
-            <div className="group relative">
+            <motion.div 
+              className="group relative"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
               <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-purple-400 rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition duration-500"></div>
               <Card className="border-0 shadow-lg hover:shadow-2xl transition-all duration-300 transform group-hover:scale-105 rounded-2xl overflow-hidden">
                 <CardContent className="p-8">
@@ -186,7 +232,7 @@ export default function Home() {
                   </p>
                 </CardContent>
               </Card>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
