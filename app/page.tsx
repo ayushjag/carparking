@@ -112,7 +112,7 @@ export default function Home() {
                   Search Now
                 </Button>
               </div>
-            </form>
+            </motion.form>
 
             {/* Quick stats */}
             <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-2xl mx-auto mt-16">
