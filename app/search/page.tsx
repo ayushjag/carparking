@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { Navbar } from "@/components/layout/navbar";
@@ -104,19 +105,19 @@ function SearchContent() {
       <Navbar />
 
       {/* Hero Section */}
-      <div
-        className="relative text-white py-20 md:py-28 overflow-hidden bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&h=900&fit=crop')",
-          backgroundAttachment: "fixed",
-        }}
-      >
+      <div className="relative text-white py-20 md:py-28 overflow-hidden">
+        <Image
+          src="/carparks2.png"
+          alt="Car parking background"
+          fill
+          className="object-cover"
+          priority
+        />
         {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-blue-900/60"></div>
-        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-blue-900/60 z-10"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl z-10"></div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
               Find Perfect Parking Spots in Seconds

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
@@ -39,18 +40,18 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section
-        className="relative text-white overflow-hidden bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1506521295926-19bfd6b06b2e?w=1600&h=900&fit=crop')",
-          backgroundAttachment: "fixed",
-        }}
-      >
+      <section className="relative text-white overflow-hidden">
+        <Image
+          src="/carparks.png"
+          alt="Car parking background"
+          fill
+          className="object-cover"
+          priority
+        />
         {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-blue-900/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-blue-900/60 z-10"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 ">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 z-20">
           <div className="text-center max-w-4xl mx-auto">
             <motion.div
               className="inline-block mb-6 px-4 py-2 bg-blue-500/30 backdrop-blur-md rounded-full border border-blue-400/30"
@@ -536,7 +537,7 @@ export default function Home() {
       {/* How It Works Section */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
+          <motion.div
             className="text-center mb-20"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -554,7 +555,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* Step 1 */}
-            <motion.div 
+            <motion.div
               className="relative group"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -580,7 +581,7 @@ export default function Home() {
             </motion.div>
 
             {/* Step 2 */}
-            <motion.div 
+            <motion.div
               className="relative group"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -606,7 +607,7 @@ export default function Home() {
             </motion.div>
 
             {/* Step 3 */}
-            <motion.div 
+            <motion.div
               className="relative group"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -661,7 +662,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* Testimonial 1 */}
-            <motion.div 
+            <motion.div
               className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border border-gray-100 transform hover:scale-105"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -688,7 +689,7 @@ export default function Home() {
             </motion.div>
 
             {/* Testimonial 2 */}
-            <motion.div 
+            <motion.div
               className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border border-gray-100 transform hover:scale-105"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -715,7 +716,7 @@ export default function Home() {
             </motion.div>
 
             {/* Testimonial 3 */}
-            <motion.div 
+            <motion.div
               className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 border border-gray-100 transform hover:scale-105"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -767,7 +768,7 @@ export default function Home() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {/* Stat Cards */}
-            <motion.div 
+            <motion.div
               className="group relative"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -783,7 +784,7 @@ export default function Home() {
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className="group relative"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -799,7 +800,7 @@ export default function Home() {
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className="group relative"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -815,7 +816,7 @@ export default function Home() {
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className="group relative"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
